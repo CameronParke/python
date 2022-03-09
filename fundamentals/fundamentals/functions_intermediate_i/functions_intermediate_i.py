@@ -107,8 +107,8 @@ def printInfo(some_dict):
 
 printInfo(dojo)
 
-""" 
-# output:
+"""  
+# output:  
 7 LOCATIONS
 San Jose
 Seattle
