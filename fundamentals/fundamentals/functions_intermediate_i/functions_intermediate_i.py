@@ -11,6 +11,25 @@ sports_directory = {
 }
 z = [ {'x': 10, 'y': 20} ]
 
+x[1][0] = 15
+print(x)
+
+print("*"*10)
+
+students[0]['last_name'] = 'Bryant'
+print(students)
+
+print("*"*20)
+
+sports_directory['soccer'][0] = 'Andres'
+print(sports_directory['soccer'])
+
+print("*"*20)
+
+z[0]['y']= 30
+print(z)
+
+print("*"*20)
 #adding a comment to check git repo name change
 
 
@@ -22,21 +41,25 @@ z = [ {'x': 10, 'y': 20} ]
 
 #2 Iterate Through a List of Dictionaries
 #Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value. For example, given the following list:
+students = [
+        {'first_name':  'Michael', 'last_name' : 'Jordan'},
+        {'first_name' : 'John', 'last_name' : 'Rosales'},
+        {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+        {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
 
-def iterateDictionary(students):
+def iterateDictionary(dict):
+    for student in students:
+        for key, value in student.items():
+            print(key, " - ", value)
 
-    students = [
-            {'first_name':  'Michael', 'last_name' : 'Jordan'},
-            {'first_name' : 'John', 'last_name' : 'Rosales'},
-            {'first_name' : 'Mark', 'last_name' : 'Guillen'},
-            {'first_name' : 'KB', 'last_name' : 'Tonel'}
-        ]
-iterateDictionary(students)
+iterateDictionary(students) 
+
+print("*"*20)
 
 # should output: (it's okay if each key-value pair ends up on 2 separate lines;
 # bonus to get them to appear exactly as below!)
-"""
-first_name - Michael, last_name - Jordan
+"""first_name - Michael, last_name - Jordan
 first_name - John, last_name - Rosales
 first_name - Mark, last_name - Guillen
 first_name - KB, last_name - Tonel
@@ -50,9 +73,15 @@ Create a function iterateDictionary2(key_name, some_list) that, given a list of 
 Michael
 John
 Mark
-KB
+KB"""
+def iterateDictionary2(key_name, some_list):
+    for student in students:
+        print(student[key_name])
 
-And iterateDictionary2('last_name', students) should output:
+iterateDictionary2('first_name', students)
+print("*"*20)
+iterateDictionary2('last_name', students)
+"""And iterateDictionary2('last_name', students) should output:
 
 Jordan
 Rosales
@@ -63,12 +92,22 @@ Tonel
 #4 Iterate Through a Dictionary with List Values
 """
 Create a function printInfo(some_dict) that given a dictionary whose values are all lists, prints the name of each key along with the size of its list, and then prints the associated values within each key's list. For example:
-
+"""
 dojo = {
     'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
     'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
+
+def printInfo(some_dict):
+    for key in dojo:
+        print("*"*20)
+        print(len(dojo[key]), key.upper())
+        for value in dojo[key]:
+            print(value)
+
 printInfo(dojo)
+
+""" 
 # output:
 7 LOCATIONS
 San Jose
