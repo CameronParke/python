@@ -1,3 +1,0 @@
-import parent
-
-print(locals())
