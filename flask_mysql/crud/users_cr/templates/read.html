@@ -17,6 +17,7 @@
                     <th scope="col">Last</th>
                     <th scope="col">Email</th>
                     <th scope="col">Created At</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +26,10 @@
                     <th scope="row">{{ user.first_name }}</th>
                     <td>{{ user.last_name }}</td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.created_at }}</td>
+                    <td>{{ user.created_at.strftime("%b %d %Y") }}</td>
+                    <td><a href="/user/{{ user.id }}">Show</a>
+                        <a href="/user/edit/{{ user.id }}">Edit</a>
+                        <a href="/user/delete/{{ user.id}}">Delete</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
