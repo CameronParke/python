@@ -1,0 +1,47 @@
+[
+	{
+		"id" : 1,
+		"first_name" : "Bobothy",
+		"last_name" : "Jones",
+		"occupation" : "Cool Guy",
+		"age" : 27,
+		"created_at" : "2022-03-19 21:02:29",
+		"updated_at" : "2022-03-19 21:02:29"
+	},
+	{
+		"id" : 2,
+		"first_name" : "Jimothy",
+		"last_name" : "Jones",
+		"occupation" : "Cool Guy Brother",
+		"age" : 27,
+		"created_at" : "2022-03-19 21:02:29",
+		"updated_at" : "2022-03-19 21:02:29"
+	},
+	{
+		"id" : 3,
+		"first_name" : "Saminthia",
+		"last_name" : "Jones",
+		"occupation" : "Cool Guy Sister",
+		"age" : 17,
+		"created_at" : "2022-03-19 21:02:29",
+		"updated_at" : "2022-03-19 21:02:29"
+	},
+	{
+		"id" : 4,
+		"first_name" : "Sbeve",
+		"last_name" : "Tyler",
+		"occupation" : "Singer Guy",
+		"age" : 45,
+		"created_at" : "2022-03-19 21:02:30",
+		"updated_at" : "2022-03-19 21:02:30"
+	},
+	{
+		"id" : 5,
+		"first_name" : "Rafaelangelo",
+		"last_name" : "Donanardo",
+		"occupation" : "Def Not a Ninja Turtle",
+		"age" : 22,
+		"created_at" : "2022-03-19 21:02:30",
+		"updated_at" : "2022-03-19 21:02:30"
+	}
+]
