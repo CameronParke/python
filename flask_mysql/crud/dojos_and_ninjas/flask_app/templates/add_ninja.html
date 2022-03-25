@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>New Ninja</title>
+</head>
+<body>
+    <div class="container bg-dark text-white m-auto">
+        <h1 class="text-center text-primary">New Ninja</h1>
+        <form action="/ninja/create" method="post"> 
+            <div class="mb-3">
+                <label for="dojo_id" class="form-label">Dojo:</label>
+                <select name="dojo_id">
+                    <option value="" disabled selected>Choose A Dojo</option>
+                    {% for dojo in dojos %}
+                    <option value="{{ dojo.id }}" name="dojo_id">{{ dojo.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First Name:</label>
+                <input type="text" class="form-control" name="first_name" id="first_name">
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" name="last_name" id="last_name">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" class="form-control" name="age" id="age">
+            </div>
+            <button type="submit" class="btn mb-2 btn-primary border-light">Create</button>
+        </form>
+        <a class="float-start" href="/">Home</a>
+    </div>
+</body>
+</html>
