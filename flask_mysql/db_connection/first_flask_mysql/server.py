@@ -1,5 +1,5 @@
 from flask_app import app
-from flask_app.controllers import friend_controller
+from flask_app.controllers import friend_controller, faction_controller
 
 
 

@@ -9,17 +9,19 @@
 </head>
 <body>
     <div class="container">
+        <a class="btn btn-info ml-2 mt-2 float-end" href="/faction/new">Add New Faction</a>
+        <small>Please add Faction before Friend!</small>
         <a class="btn btn-warning mt-2 float-end" href="/friend/new">Add New Friend</a>
-        <form action="/create_friend" method="POST">
+        <!-- <form action="/create_friend" method="POST">
             <label for="fname">First Name:</label>
-            <input type="text" name="fname">  <!-- all these name = " " must match the name we gave the variables in our friend.py save function as the VALUES in the query we run   -->
-            <label for="lname">Last Name:</label>
+            <input type="text" name="fname"> all these name = " " must match the name we gave the variables in our friend.py save function as the VALUES in the query we run   -->
+            <!-- <label for="lname">Last Name:</label>
             <input type="text" name="lname">
             <label for="occ" >Occupation:</label>
             <input type="text" name="occ">
-            <label for="age" >Age:</label>
+            <label for="age" >Agke:</label>
             <input type="number" name="age">
-            <input type="submit" value="Add Friend">
+            <input type="submit" value="Add Friend"> -->
         </form>
         <h1> All My Friends</h1>
         <!-- The Learn platform method below -->
@@ -50,7 +52,7 @@
                     </thead>
                     <tbody>
                         {% for friend in friends %}
-                        <!-- all_friends above comes from the server.py file, it is being rendered to the template through the @app.route('/')
+                        <!-- friends above comes from the server.py file, it is being rendered to the template through the @app.route('/')
                         The for friend above is simply a random variable that could be named anything if we wanted, keeping it friend works in this context, but could just as easily be i or anything else we want to call it-->
                         <tr> <!--only need one track row because we will use a for loop to run through all the data. Put the for loop above the <tr> tag and below the </tr> tag so it will populate a new table row every time it loops  --> 
                         <!-- In lines 38 through 41 we pull our data put based on how we constructed our instances  -->
@@ -60,6 +62,27 @@
                             <td>{{ friend.first_name }} {{ friend.last_name }}</td>
                             <td>{{ friend.age }}</td>
                             <td>{{ friend.occupation }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <h1>Here's Our Factions</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Level of Difficulty</th>
+                            <th scope="col">Date Established</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for faction in factions %}
+                        <tr>
+                            <th scope="row">{{ faction.id }}</th>
+                            <th><a href="/faction/{{ faction.id }}">{{ faction.name }}</a></th>
+                            <td>{{ faction.level }}</td>
+                            <td>{{ faction.date_created }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

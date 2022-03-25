@@ -10,12 +10,14 @@
 <body>
     <div class="container">
         <a class="btn btn-danger mt-2 float-end" href="/">Return to Dashboard</a>
-        <h1>Show one page works!!</h1>
-        <h3>{{ one_friend.id }}</h3>
-        <h3>{{ one_friend.first_name }}</h3>
-        <h3>{{ one_friend.last_name }}</h3>
-        <h3>{{ one_friend.age }}</h3>
-        <h3>{{ one_friend.occupation }}</h3>
+        <h1>Show one page works!!</h1> 
+        <h3>Friend ID: <span class="text-info"> {{ one_friend.id }}</h3> </span>
+        <h3>Friend First Name: <span class="text-info">{{ one_friend.first_name }}</h3></span>
+        <h3>Friend Last Name: <span class="text-info">{{ one_friend.last_name }}</h3></span>
+        <h3>Friend Age: <span class="text-info">{{ one_friend.age }}</h3></span>
+        <h3>Friend Occupation: <span class="text-info">{{ one_friend.occupation }}</h3></span>
+        
+        <h2>Faction Info: <span class="text-danger">{{ one_friend.faction.name }} - {{ one_friend.faction.date_created }}, {{ one_friend.faction.level }}</span></h2>
     </div>
 </body>
 </html>
